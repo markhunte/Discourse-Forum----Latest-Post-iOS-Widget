@@ -8,9 +8,9 @@
 
 
 
-|                          Small                           |                         Medium                         |                          Large                           |
-| :------------------------------------------------------: | :----------------------------------------------------: | :------------------------------------------------------: |
-| <img src="README.assets/smallW.png" style="zoom:50%;" /> | <img src="README.assets/medW.png" style="zoom:50%;" /> | <img src="README.assets/largeW.png" style="zoom:50%;" /> |
+|                           Small                           |                         Medium                          |                           Large                           |
+| :-------------------------------------------------------: | :-----------------------------------------------------: | :-------------------------------------------------------: |
+| <img src="README.assets/smallW1.png" style="zoom:50%;" /> | <img src="README.assets/medW1.png" style="zoom:50%;" /> | <img src="README.assets/largeW1.png" style="zoom:50%;" /> |
 
 
 
