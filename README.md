@@ -16,13 +16,13 @@
 
 This  widget  ( ***ForumMHWidgetv1.js*** ) was created with [Scriptable](https://scriptable.app ) and is designed to show the latests user posts on the Tumult Hype Forum Site.
 
-The Forum is powered by ***DISQUS***. Which also powers many other forums.
+The Forum is powered by **Discourse**. Which also powers many other forums.
 
-It should be relatively easy to adapt to other DISQUS powered fora, like the <img src="README.assets/Screenshot 2020-11-04 at 17.10.23.jpg" />   [Forums ](https://talk.automators.fm) which hosts a **Scriptable** category and where I spents some time threading through the posts. ( check it out)
+It should be relatively easy to adapt to other Discourse powered fora, like the <img src="README.assets/Screenshot 2020-11-04 at 17.10.23.jpg" />   [Forums ](https://talk.automators.fm) which hosts a **Scriptable** category and where I spents some time threading through the posts. ( check it out)
 
 
 
-Note  though, that the json files and their corresponding tree structure  and name keys may differer on other Disqus powered sites.
+Note  though, that the json files and their corresponding tree structure  and name keys may differer on other Discourse powered sites.
 
  <img src="README.assets/small.png" alt="small" style="zoom:50%;" /> ***Scriptable*** is a free app on the AppStore that allows you to write and automate using Javascript on your iOS devices. 
 
