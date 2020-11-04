@@ -9,23 +9,25 @@
 
 
 
-[This Scriptable]: https://scriptable.app
-
- was created widget shows the latests posts on the Tumult Hype Forum Site.
+This  widget  was created with [Scriptable](https://scriptable.app ) and is designed to show the latests user posts on the Tumult Hype Forum Site.
 
 The Forum is powered by DISQUS. Which also powers many other forums.
 
-It should be relatively easy to adapt to other DISQUS powered fora 
-
-But note though,  that the json files and their corresponding structure may differer.
-
-Scriptable ![small](README.assets/small.png) is a free app on the AppStore that allows you to write and automate using Javascript on your iOS devices. 
+It should be relatively easy to adapt to other DISQUS powered fora, like the   [Automators ](https://talk.automators.fm) forum which hosts a Scriptable category and where I spents some time threading through the posts. ( check it out)
 
 
+
+Note  though that the json files and their corresponding tree structure  and name keys may differer on other Disqus powered sites.
+
+ <img src="README.assets/small.png" alt="small" style="zoom:50%;" /> ***Scriptable*** is a free app on the AppStore that allows you to write and automate using Javascript on your iOS devices. 
 
 <hr>
 
-#### Setup
+#### Setup on iOS Device
+
+
+
+The scriptable js file needs to be added to you scriptable list. You can simple drop the file into your iCloud's ***Scriptable*** folder on your Mac, or via files.app on your device.
 
 
 
@@ -59,9 +61,9 @@ Remember widgets do not show fully dynamic data. They are snap shots and update 
 
 
 
-There is a Table presentation (sheet ).
+There is a **Table**  view presentation (sheet ).
 
-The Table view for the posts is in fact the original idea of @MaxZieb who also introduced us to Scriptable at the same time.
+The Table view for the posts, is in fact the original idea ( and inspiration for this widget ) of @MaxZieb, another user of the forums, who also introduced us to Scriptable at the same time.
 
 I have partially updated the Table's code to use the current data.
 
