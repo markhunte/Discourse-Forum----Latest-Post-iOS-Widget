@@ -122,25 +122,26 @@ if (debugWidget){
 ///=====---------debugger end
 
  if (config.runsInWidget) {
-  // create and show widgetdependant on Parameter
-   if(args.widgetParameter != null &&  args.widgetParameter.includes("small") ){
-        
-       var { listWidge, jPosters, postDetails, pTime, imurl, iurl, imgz ,widgetPostLimit} = await smallWidgets()
-        
      
-   } else if(args.widgetParameter != null &&  args.widgetParameter.includes("medium") ){
-           
-       //-- limit post number
+    // create and show widgetdependant on Parameter
+       if (config.widgetFamily == "small"){
+          
+         var { listWidge, jPosters, postDetails, pTime, imurl, iurl, imgz ,widgetPostLimit} = await smallWidgets()
+          
        
-       widgetPostLimit = 3
-            
-            var { listWidge, jPosters, postDetails, pTime, imurl, iurl, imgz,widgetPostLimit } = await otherWidgets()
-      
-   } else if(args.widgetParameter != null &&  args.widgetParameter.includes("large") ){
-       
-       //-- use default widgetPostLimit
-        var { listWidge, jPosters, postDetails, pTime, imurl, iurl, imgz,widgetPostLimit } = await otherWidgets()
-     }
+     } else  if (config.widgetFamily == "medium") {
+             
+         //-- limit post number
+         
+         widgetPostLimit = 3
+              
+              var { listWidge, jPosters, postDetails, pTime, imurl, iurl, imgz,widgetPostLimit } = await otherWidgets()
+        
+     } else if (config.widgetFamily == "large"){
+         
+         //-- use default widgetPostLimit
+          var { listWidge, jPosters, postDetails, pTime, imurl, iurl, imgz,widgetPostLimit } = await otherWidgets()
+       }
    
     //
    

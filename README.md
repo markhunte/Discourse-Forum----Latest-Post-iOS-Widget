@@ -48,13 +48,17 @@ Once the files is on your device (should sync via iCloud from device to device)
 
 Select a Scriptable Widget on your devices (iOS 14+)  Using the Add new widget on the Home Screen.
 
-Choose the new Script file (ForumMHWidgetv1.js)  and  in the **Parameter** field; enter either **small**, **medium** or **large**, depending on which size widget you have chosen.
+Choose the new Script file (ForumMHWidgetv1.js)  ~~and  in the **Parameter** field; enter either **small**, **medium** or **large**, depending on which size widget you have chosen.~~
+
+The size of the widget will determine the type of display.
+
+***Small*** will display a single latest post, ***Medium*** the top three latest posts and the ***Large*** will display the top six.
 
 
 
 |                                                              |                                                              |
 | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| <img src="README.assets/IMG_2277.PNG" alt="IMG_2277" style="zoom:33%;" /> | <img src="README.assets/IMG_2279.PNG" alt="IMG_2279" style="zoom:33%;" /> |
+| <img src="README.assets/IMG_2277.PNG" alt="IMG_2277" style="zoom:33%;" /> | <img src="README.assets/IMG_2279_.PNG" alt="IMG_2279" style="zoom:33%;" /> |
 
  Hit **done**. Thats it.
 
