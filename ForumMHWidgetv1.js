@@ -123,7 +123,7 @@ if (debugWidget){
 
  if (config.runsInWidget) {
      
-    // create and show widgetdependant on Parameter
+    // create and show widget dependant on size chosen
        if (config.widgetFamily == "small"){
           
          var { listWidge, jPosters, postDetails, pTime, imurl, iurl, imgz ,widgetPostLimit} = await smallWidgets()
