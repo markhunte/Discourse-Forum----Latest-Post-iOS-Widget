@@ -1,5 +1,5 @@
 # Tumult Hype latest Post iOS Widget
- A widget created  with Scriptable for **Tumult Hype Forum** latest posts
+ A widget created  with Scriptable for <img src="README.assets/Screenshot 2020-11-04 at 17.10.40.jpg" style="zoom:25%;" /> **Tumult Hype**  [<span style="color:darkgrey"><b>Forums</b> </span>](https://forums.tumult.com)  Latest posts
 
 
 
@@ -11,13 +11,13 @@
 
 This  widget  was created with [Scriptable](https://scriptable.app ) and is designed to show the latests user posts on the Tumult Hype Forum Site.
 
-The Forum is powered by DISQUS. Which also powers many other forums.
+The Forum is powered by ***DISQUS***. Which also powers many other forums.
 
-It should be relatively easy to adapt to other DISQUS powered fora, like the   [Automators ](https://talk.automators.fm) forum which hosts a Scriptable category and where I spents some time threading through the posts. ( check it out)
+It should be relatively easy to adapt to other DISQUS powered fora, like the <img src="README.assets/Screenshot 2020-11-04 at 17.10.23.jpg" style="zoom:25%;" />   [Forums ](https://talk.automators.fm) which hosts a **Scriptable** category and where I spents some time threading through the posts. ( check it out)
 
 
 
-Note  though that the json files and their corresponding tree structure  and name keys may differer on other Disqus powered sites.
+Note  though, that the json files and their corresponding tree structure  and name keys may differer on other Disqus powered sites.
 
  <img src="README.assets/small.png" alt="small" style="zoom:50%;" /> ***Scriptable*** is a free app on the AppStore that allows you to write and automate using Javascript on your iOS devices. 
 
@@ -27,23 +27,33 @@ Note  though that the json files and their corresponding tree structure  and nam
 
 
 
-The scriptable js file needs to be added to you scriptable list. You can simple drop the file into your iCloud's ***Scriptable*** folder on your Mac, or via files.app on your device.
+The scriptable js file needs to be added to you scriptable list. You can simple drop the file into your iCloud' Drive's ***Scriptable*** folder on your Mac or via files.app on your device.
 
 
 
-Select a Scriptable Widget on your devices (iOS 14+)
-
-Choose the Script file.
-
-
-
-In the **Parameter** field; enter either **small**, **medium** or **large**, depending on which size widget you have chosen.
+|                                                              |                                                              |
+| ------------------------------------------------------------ | ------------------------------------------------------------ |
+| <img src="README.assets/Screenshot 2020-11-04 at 17.08.45.jpg" style="zoom:50%;" /> | <img src="README.assets/IMG_2280.PNG" alt="IMG_2280" style="zoom:33%;" /> |
 
 
 
-Hit done. Thats it.
+Once the files is on your device (should sync via iCloud from device to device)
+
+Select a Scriptable Widget on your devices (iOS 14+) when adding a new widget.
+
+Choose the Script file and  In the **Parameter** field; enter either **small**, **medium** or **large**, depending on which size widget you have chosen.
 
 
+
+|                                                              |                                                              |
+| ------------------------------------------------------------ | ------------------------------------------------------------ |
+| <img src="README.assets/IMG_2277.PNG" alt="IMG_2277" style="zoom:33%;" /> | <img src="README.assets/IMG_2279.PNG" alt="IMG_2279" style="zoom:33%;" /> |
+
+ Hit **done**. Thats it.
+
+
+
+<hr>
 
 #### Usage
 
@@ -73,15 +83,25 @@ I have partially updated the Table's code to use the current data.
 
 
 
-The code has comments.
+*The code mostly has comments.*
 
 There are two json trees in use from the json file data.
 
  **users** and **topic_list**
 
- The users **id** is in the topic list along with most of the other needed data, including post id and url
+ The users **id** is in the **topic** list along with most of the other needed data, including post id and url
 
- The user id is then searched for in the users tree to find the users image.
+ The user id is then searched for in the **users** tree to find the users image.
+
+|                    **topic_list**/topics                     |                          **users**                           |
+| :----------------------------------------------------------: | :----------------------------------------------------------: |
+| <img src="README.assets/Screenshot 2020-11-04 at 17.52.34.jpg" alt="Screenshot 2020-11-04 at 17.52.34" style="zoom:50%;" /> | <img src="README.assets/Screenshot 2020-11-04 at 17.51.07.jpg" alt="Screenshot 2020-11-04 at 17.51.07" style="zoom:60%;" /> |
+
+
+
+ 
+
+
 
 
 
