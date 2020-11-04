@@ -1,11 +1,7 @@
 # Tumult Hype latest Post iOS Widget
+ A widget created  with Scriptable for
 
-
-
-
-|                                                              |
-| ------------------------------------------------------------ |
-| A widget created  with Scriptable for <img src="README.assets/Screenshot 2020-11-04 at 17.10.40.jpg" style="zoom:25%;" />**Tumult Hype**  [<span style="color:darkgrey"><b>Forums</b> </span>](https://forums.tumult.com)  Latest posts |
+  <img src="README.assets/Screenshot 2020-11-04 at 17.10.40.jpg"   /> **Tumult Hype**  [<span style="color:darkgrey"><b>Forums</b> </span>](https://forums.tumult.com)  Latest posts 
 
 
 
@@ -19,13 +15,7 @@ This  widget  was created with [Scriptable](https://scriptable.app ) and is de
 
 The Forum is powered by ***DISQUS***. Which also powers many other forums.
 
-It should be relatively easy to adapt to other DISQUS powered fora, like the
-
-|                                                              |
-| ------------------------------------------------------------ |
-| <img src="README.assets/Screenshot 2020-11-04 at 17.10.23.jpg" style="zoom:25%;" /> [Forums ](https://talk.automators.fm) |
-
-which hosts a **Scriptable** category and where I spents some time threading through the posts. ( check it out)
+It should be relatively easy to adapt to other DISQUS powered fora, like the <img src="README.assets/Screenshot 2020-11-04 at 17.10.23.jpg" style="zoom:25%;" />   [Forums ](https://talk.automators.fm) which hosts a **Scriptable** category and where I spents some time threading through the posts. ( check it out)
 
 
 
