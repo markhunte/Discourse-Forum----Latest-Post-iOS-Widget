@@ -5,11 +5,9 @@
 
 |                          Small                           |                         Medium                         |                          Large                           |
 | :------------------------------------------------------: | :----------------------------------------------------: | :------------------------------------------------------: |
-| <img src="README.assets/smallW.PNG" style="zoom:50%;" /> | <img src="README.assets/medW.PNG" style="zoom:50%;" /> | <img src="README.assets/largeW.PNG" style="zoom:50%;" /> |
+| <img src="README.assets/smallW.png" style="zoom:50%;" /> | <img src="README.assets/medW.png" style="zoom:50%;" /> | <img src="README.assets/largeW.png" style="zoom:50%;" /> |
 
 
-
- <img src="README.assets/smallW.PNG" style="zoom:50%;" />
 
 [This Scriptable]: https://scriptable.app
 
