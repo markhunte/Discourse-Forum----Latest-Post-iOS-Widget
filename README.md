@@ -9,7 +9,7 @@
 
 
 
- 
+ <img src="README.assets/smallW.PNG" style="zoom:50%;" />
 
 [This Scriptable]: https://scriptable.app
 
