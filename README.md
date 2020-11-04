@@ -1,7 +1,9 @@
 # Tumult Hype latest Post iOS Widget
- A widget created  with Scriptable for <img src="README.assets/Screenshot 2020-11-04 at 17.10.40.jpg" style="zoom:25%;" /> **Tumult Hype**  [<span style="color:darkgrey"><b>Forums</b> </span>](https://forums.tumult.com)  Latest posts
+ A widget created  with Scriptable for
 
+| **<img src="README.assets/Screenshot 2020-11-04 at 17.10.40.jpg" style="zoom:25%;" />Tumult Hype**  [<span style="color:darkgrey"><b>Forums</b> </span>](https://forums.tumult.com)  Latest posts |
 
+  
 
 |                          Small                           |                         Medium                         |                          Large                           |
 | :------------------------------------------------------: | :----------------------------------------------------: | :------------------------------------------------------: |
