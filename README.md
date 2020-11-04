@@ -1,5 +1,5 @@
 # Tumult Hype latest Post iOS Widget
- A widget created  with Scriptable for
+ A widget created  with Scriptable.app for iOS to display: 
 
   <img src="README.assets/Screenshot 2020-11-04 at 17.10.40.jpg"   /> **Tumult Hype**  [<span style="color:darkgrey"><b>Forums</b> </span>](https://forums.tumult.com)  Latest posts 
 
@@ -11,11 +11,11 @@
 
 
 
-This  widget  was created with [Scriptable](https://scriptable.app ) and is designed to show the latests user posts on the Tumult Hype Forum Site.
+This  widget  ( ***ForumMHWidgetv1.js*** ) was created with [Scriptable](https://scriptable.app ) and is designed to show the latests user posts on the Tumult Hype Forum Site.
 
 The Forum is powered by ***DISQUS***. Which also powers many other forums.
 
-It should be relatively easy to adapt to other DISQUS powered fora, like the <img src="README.assets/Screenshot 2020-11-04 at 17.10.23.jpg" style="zoom:25%;" />   [Forums ](https://talk.automators.fm) which hosts a **Scriptable** category and where I spents some time threading through the posts. ( check it out)
+It should be relatively easy to adapt to other DISQUS powered fora, like the <img src="README.assets/Screenshot 2020-11-04 at 17.10.23.jpg" />   [Forums ](https://talk.automators.fm) which hosts a **Scriptable** category and where I spents some time threading through the posts. ( check it out)
 
 
 
@@ -41,9 +41,9 @@ The scriptable js file needs to be added to you scriptable list. You can simple 
 
 Once the files is on your device (should sync via iCloud from device to device)
 
-Select a Scriptable Widget on your devices (iOS 14+) when adding a new widget.
+Select a Scriptable Widget on your devices (iOS 14+)  Using the Add new widget on the Home Screen.
 
-Choose the Script file and  In the **Parameter** field; enter either **small**, **medium** or **large**, depending on which size widget you have chosen.
+Choose the new Script file (ForumMHWidgetv1.js)  and  in the **Parameter** field; enter either **small**, **medium** or **large**, depending on which size widget you have chosen.
 
 
 
@@ -53,7 +53,7 @@ Choose the Script file and  In the **Parameter** field; enter either **small**, 
 
  Hit **done**. Thats it.
 
-
+Dont worry about changing the 'When interacting' that is overridden in the script.
 
 <hr>
 
@@ -61,19 +61,19 @@ Choose the Script file and  In the **Parameter** field; enter either **small**, 
 
 **From the widget.**
 
-Each post when touched will take you to the post in the thread.
+Each post when touched, will take you to the post entry in the thread.
 
 The Tumult header when touched will take you to the Tumult main page and topic list.
 
-Remember widgets do not show fully dynamic data. They are snap shots and update periodically 
+Remember widgets do not show fully dynamic data. They are snapshots and update periodically 
 
 
 
 **From  shortcuts , scriptable etc..**
 
+Scriptable files can also be run from iOS Shortcuts.app
 
-
-There is a **Table**  view presentation (sheet ).
+There is a **Table**  view presentation (sheet ) mainly for when used this way.
 
 The Table view for the posts, is in fact the original idea ( and inspiration for this widget ) of @MaxZieb, another user of the forums, who also introduced us to Scriptable at the same time.
 
