@@ -292,7 +292,7 @@ function jPoster(jPosters){
         var thisLatest = jPosters[ii].extras
         
         
-        if(thisLatest === 'latest') {
+        if(thisLatest != null && thisLatest.includes('latest')) {
             return  jPosters[ii].user_id
         }
     }
