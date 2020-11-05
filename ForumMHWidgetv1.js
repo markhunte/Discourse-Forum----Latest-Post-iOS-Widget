@@ -311,6 +311,11 @@ function jPoster(jPosters){
                 var itemTitleUrlSlug =   (forumURL + "/t/" + jPosters.slug + "/" + itemID  + "/" + itemPostCount).toString()
                 var fancyTitle = item.toString()
                 var timePosted = (jPosters.last_posted_at).toString()
+                 var timePostedBumped = (jPosters.bumped_at).toString()
+                //-- POST Entry may only have beed edited so we need to reflect that time instead of original post time
+                if (timePosted != timePostedBumped){
+                timePosted = timePostedBumped
+                }
                 var latestPosterImageID =  jPoster(jPosters.posters)
  
         //-- May throw an ERROR if a poster has not chosen an avatar image yet., SO we try catch and use a tumult image as substitute.
