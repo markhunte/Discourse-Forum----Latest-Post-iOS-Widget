@@ -10,7 +10,7 @@
  
 • IF runsInWidget
  
- ->  smallWidgets(),otherWidgets()... determined by args if small, medium, large widget in use
+ ->  smallWidgets(), otherWidgets()... determined by args if small, medium, large widget in use
  
         -> parseDetails()..parse post details from jason..
             -> jPoster().. returns latest posts list
@@ -22,28 +22,35 @@
           
         ->iurl  .. returns image data
   
+/*
+
+ NOTE on first_Entry_starting_At constant.
  
+ Skipping the first entry : On the  .json?atest entries.
  
+ for smallWidgets()
+  var jPosters = jTopics[1] // We would normall use 0 but we want to skip the first entry here for Scriptable latest as it is  the "About the Scriptable category"
+  
+  For otherWdigets   we iterate :   i = 0 normally but we want to hide the first entry which is "About the Scriptable category" so we use 1
+
+For the Table :
+we iterate :   i = 0 normally but we want to hide the first entry which is "About the Scriptable category" so we use 1
 
 
 • ELSE
   // MAKE TABLE FOR SHEET//
-
      -> parseDetails().parse post details from jason..
         -> jPoster().. returns latest posts list
         -> jImage().. returns latest post user image url
         convert().. cleans post title
-
     ->timeToString ... converts post date
         -> diff_minutes(),diff_hours() -> returns relative time string
    
     ->iurl  .. returns image data
-
 •IF (config.runsWithSiri)
  
  Speak
  show table
-
  
  //=
  
@@ -62,15 +69,23 @@ var debugSize = "large"
 
 const forumURL = "https://forums.tumult.com"
 const url = forumURL+"/latest.json"
+
+const widget_title_heading = "Tumult Forum"
+const first_Entry_starting_At = 0  // == We may want to skip the first post as it may be the Topic About Thread. use 1 to skip use 0 to include. This will be use in the  for loop iterations
+
 const req = new Request(url)
 const json = await req.loadJSON()
 const  imageSize = 42
 var widgetPostLimit = 6
-const lineColor = Color.yellow()
+const lineColor = Color.white()
 const lineOpacity=  0.2
 const lineHeight = 0.5
-const widgetBG =   Color.black()//new Color("210F3D")
- 
+
+// Panel colours
+const widgetBG =   Color.black() 
+const widgetTitleColor = new Color("#CCCCCC", 1)
+const widgetTextColor  = Color.blue()
+const userNameTextColor = Color.white()
 
 //-- user groups
 const jUsers = json.users
@@ -85,10 +100,10 @@ listWidge.backgroundColor =  widgetBG
 // new Color("#3D3A3A",1) //
 var forumHeader = listWidge.addStack()
 forumHeader.layoutHorizontally()
-var forumHD = forumHeader.addText("Tumult Forum")
+var forumHD = forumHeader.addText(widget_title_heading)
 forumHD.font = Font.semiboldRoundedSystemFont(15)
 forumHeader.topAlignContent()
-forumHD.textColor = new Color("#CCCCCC", 1)
+forumHD.textColor = widgetTitleColor
 forumHeader.url = forumURL
 
 
@@ -141,6 +156,11 @@ if (debugWidget){
          
          //-- use default widgetPostLimit
           var { listWidge, jPosters, postDetails, pTime, imurl, iurl, imgz,widgetPostLimit } = await otherWidgets()
+       } else if (config.widgetFamily == "extraLarge"){
+         
+        
+                 //-- use default widgetPostLimit
+          var { listWidge, jPosters, postDetails, pTime, imurl, iurl, imgz,widgetPostLimit } = await otherWidgets()
        }
    
     //
@@ -162,14 +182,15 @@ Script.setWidget(listWidge)
     // add header
     let row = new UITableRow()
     row.isHeader = true
-    row.addText("Tumult Forum")
+    row.addText(widget_title_heading)
     table.addRow(row)
     
   
     let posts = json.latest_posts
     
     
-    for (i = 0; i < tablePostLimit; i++) {
+   //==  we iterate :   i = 0 normally but we want to hide the first entry which is "About the Scriptable category" so we use 1
+    for (i = first_Entry_starting_At; i < tablePostLimit; i++) {
         var jPosters =  jTopics[i]
         //-- retrieve last poster details from topic post item
         var postDetails = await parseDetails(jPosters)
@@ -311,14 +332,9 @@ function jPoster(jPosters){
                 var itemTitleUrlSlug =   (forumURL + "/t/" + jPosters.slug + "/" + itemID  + "/" + itemPostCount).toString()
                 var fancyTitle = item.toString()
                 var timePosted = (jPosters.last_posted_at).toString()
-                 var timePostedBumped = (jPosters.bumped_at).toString()
-                //-- POST Entry may only have beed edited so we need to reflect that time instead of original post time
-                if (timePosted != timePostedBumped){
-                timePosted = timePostedBumped
-                }
                 var latestPosterImageID =  jPoster(jPosters.posters)
  
-        //-- May throw an ERROR if a poster has not chosen an avatar image yet., SO we try catch and use a tumult image as substitute.
+        //-- May throw an ERROR if a poster has not chosen an avatar image yet., SO we try catch and use a Blog image as substitute.
                 try {
                   
                   
@@ -340,7 +356,7 @@ function jPoster(jPosters){
                 }
                 catch(err) {
                  
-                    var imageURL = "https://blog.tumult.com/wp-content/uploads/2015/03/hype-icon.jpg"
+                    var imageURL = "https://talk.automators.fm/uploads/default/original/1X/826af977e952a1707e9634545216ae15b6e9ed0e.jpg"
                     
                 }
                 
@@ -375,11 +391,11 @@ function jPoster(jPosters){
 async function smallWidgets() {
   
     
-    forumHeader.setPadding(0, 8, 0, 0)
+    forumHeader.setPadding(0, 2, 0, 0)
     listWidge.addSpacer(5)
 
     //-- topic list item
-    var jPosters = jTopics[0]
+    var jPosters = jTopics[first_Entry_starting_At] // We would normall use 0 but we want to skip the first entry here for Scriptable latest as it is  the "About the Scriptable category"
 
     //-- retrieve last poster details from topic post item
     var postDetails = await parseDetails(jPosters)
@@ -428,7 +444,7 @@ async function smallWidgets() {
     var userName = nameStack.addText(postDetails.posterUName)
 
     userName.font = Font.semiboldRoundedSystemFont(15)
-    userName.textColor = Color.white()
+    userName.textColor = userNameTextColor
 
     var times = timeStack.addText(pTime)
     times.font = Font.semiboldRoundedSystemFont(12)
@@ -449,7 +465,7 @@ async function smallWidgets() {
     var wtext1 = topicTitleStack.addText(postDetails.postTitle)
 
     wtext1.font = Font.semiboldRoundedSystemFont(16)
-    wtext1.textColor = Color.blue()
+    wtext1.textColor = widgetTextColor
 
 
 
@@ -469,7 +485,7 @@ async function otherWidgets() {
    
     listWidge.setPadding(4, 4, 4, 4)
    
-    //====--- set up Tumult Heading
+    //====--- set up BLOG Heading
     
     const forumHeaderSize = new Size(100, 1)//
     const forumHeaderContext = new DrawContext()
@@ -493,7 +509,8 @@ async function otherWidgets() {
     forumHeader.setPadding(2, 115, 0, 100)
   //====
     
-    for (i = 0; i < widgetPostLimit; i++) {
+    //== i = 0 normally but we want to hide the first entry which is "About the Scriptable category" so we use 1
+    for (i = first_Entry_starting_At; i < widgetPostLimit; i++) {
        if (i != 0){
         
      //====--- Draw lines between each post // each post only gets a line above, not bottom( will not put line at top or bottom of widget)
@@ -568,7 +585,7 @@ async function otherWidgets() {
         var wtext1 = topicTitleStack.addText(postDetails.postTitle)
 
         wtext1.font = Font.semiboldRoundedSystemFont(16)
-        wtext1.textColor = Color.blue()
+        wtext1.textColor = widgetTextColor
         topStack.addSpacer()
         listWidge.addSpacer(3)
 
@@ -593,7 +610,7 @@ async function otherWidgets() {
         var userName = nameStack.addText(postDetails.posterUName)
         //.setPadding(top, leading, bottom, trailing)
         userName.font = Font.semiboldRoundedSystemFont(12)
-        userName.textColor = Color.white()
+        userName.textColor = userNameTextColor
 
         timeStack.setPadding(1, 10, 0, 120)
         var times = nameStack.addText(pTime)
@@ -608,7 +625,3 @@ async function otherWidgets() {
 
     
 }
-
-
-
- 
