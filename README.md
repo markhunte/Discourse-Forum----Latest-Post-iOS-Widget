@@ -1,4 +1,4 @@
-# Tumult Hype latest Post iOS Widget
+# Discorse Forum latest Post iOS Widget
 
 
 
