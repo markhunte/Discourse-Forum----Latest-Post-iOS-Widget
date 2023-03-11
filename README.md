@@ -1,8 +1,8 @@
-# Discorse Forum latest Post iOS Widget
+# Discourse Forum latest Post iOS Widget
 
 
 
- A widget created  with Scriptable.app for iOS to display the latest Discorse Forum Posts: 
+ A widget created  with Scriptable.app for iOS to display the latest Discourse Forum Posts: 
 
 
 
