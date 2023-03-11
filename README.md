@@ -14,7 +14,7 @@ Example 1
 
 
 
-<img src="README.assets/scriptablelog.png" alt="Screenshot 2023-03-11 at 15.12.13" style="zoom:8%;" />  **Scriptable**'s Forum Latest posts held on  <img src="README.assets/Screenshot 2023-03-11 at 15.12.13.png" alt="Screenshot 2023-03-11 at 15.12.13" style="zoom:30%;" /> [Automators.fm](https://talk.automators.fm/c/scriptable/13) 
+<img src="README.assets/scriptablelog.png" alt="Screenshot 2023-03-11 at 15.12.13"  />  **Scriptable**'s Forum Latest posts held on  <img src="README.assets/Screenshot 2023-03-11 at 15.12.13.png" alt="Screenshot 2023-03-11 at 15.12.13"  /> [Automators.fm](https://talk.automators.fm/c/scriptable/13) 
 
 
 
