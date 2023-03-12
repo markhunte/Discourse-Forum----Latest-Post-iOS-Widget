@@ -77,15 +77,15 @@ Change these constants to point to the latest json url.
 
 
 `const forumURL = "https://talk.automators.fm"` 
-`const url = forumURL+"/c/scriptable/13.json?latest"`
+`const url = forumURL+"/c/scriptable/13.json"`
 
 
 
 The json file may be named something different, examing the Network panel in the Browser's inspector to find it and then its url path.  You should be able to  remove the query string:
 
-https://talk.automators.fm/c/scriptable/13.json?page=1
+`https://talk.automators.fm/c/scriptable/13.json?page=1`
 
-**13.json**
+The file is **13.json**
 
 It may not show up straight away in the network asset list. if not scroll the posts in the browser and it will re request when it lazy loads the next set of posts.
 
@@ -93,7 +93,7 @@ It may not show up straight away in the network asset list. if not scroll the po
 
 We then remove the query string ?page=1
 
-The code should be able to filer out the Latest posts.
+The code should be able to filter out the Latest posts.
 
 
 
