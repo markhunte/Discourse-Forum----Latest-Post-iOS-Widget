@@ -64,8 +64,6 @@ Note  though,  the json files and their corresponding tree structure  and name k
 
 ## General code edit to be done for adaption
 
-Change these constants to point to the latest json url.
-
 
 
 `var removeFirstEntry  = false` 
@@ -73,6 +71,8 @@ Change these constants to point to the latest json url.
 Change to true if you need/want to remove the first entry. This may be because it is a Sticky "About category entry"
 
 ---
+
+Change these constants to point to the latest json url.
 
 
 
