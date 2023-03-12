@@ -44,15 +44,15 @@ Example 2
 
 
 
-This  widget  ( ***ForumMHWidgetv1.js*** ) was created with [Scriptable](https://scriptable.app ) and is designed to show the latests user posts on the Tumult Hype Forum Site.
+This  widgets  ( **Tumult Forum 2.js**  &  **Scriptable  Forum 1.js** ) where created with [Scriptable](https://scriptable.app ) and are designed to show the latests user posts on the  a Forum Site.
 
-The Forum is powered by <img src="README.assets/Screenshot 2020-11-04.jpg" style="zoom:50%;" /> Which also powers many other forums.
+The Forums are powered by <img src="README.assets/Screenshot 2020-11-04.jpg" style="zoom:100%;" /> Which also powers many other forums.
 
-It should be relatively easy to adapt to other [Discourse](https://www.discourse.org) powered fora, like the <img src="README.assets/Screenshot 2020-11-04 at 17.10.23.jpg" />   [Forums ](https://talk.automators.fm) which hosts a **Scriptable** category and where I spents some time threading through the posts. ( check it out)
+It should be relatively easy to adapt to other [Discourse](https://www.discourse.org) powered fora, like the two examples which include   <img src="README.assets/Screenshot 2020-11-04 at 17.10.23.jpg" alt="small" style="zoom:150%;" />   [Forums ](https://talk.automators.fm) which hosts a **Scriptable** category and where I spents some time threading through the posts. ( check it out)
 
 
 
-Note  though, that the json files and their corresponding tree structure  and name keys may differer on other Discourse powered sites. 
+Note  though,  the json files and their corresponding tree structure  and name keys may differer on other Discourse powered sites and you may need to re mapped them.
 
  <img src="README.assets/small.png" alt="small" style="zoom:50%;" /> ***Scriptable*** is a free app on the AppStore that allows you to write and automate using Javascript on your iOS devices. 
 
@@ -62,9 +62,17 @@ Note  though, that the json files and their corresponding tree structure  and na
 
 ---
 
-## General code edit
+## General code edit to be done for adaption
 
 Change these constants to point to the latest json url.
+
+
+
+`var removeFirstEntry  = false` 
+
+Change to true if you need/want to remove the first entry. This may be because it is a Sticky "About category entry"
+
+---
 
 
 
@@ -104,7 +112,7 @@ Another  example would be
 
 
 
-Change these constants to your own desired colours and forum name at op.
+Change these constants to your own desired colours and forum name at top.
 
 const widget_forum_heading = "Scriptable"`
 
