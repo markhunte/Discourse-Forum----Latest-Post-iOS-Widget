@@ -64,6 +64,8 @@ Note  though,  the json files and their corresponding tree structure  and name k
 
 ## General code edit to be done for adaption
 
+*Tip:  The Scriptable script folder will be in your iCloud/ Files. Which means you can do the edits using an editor on your Mac and the run on your iOS device once synced.*
+
 
 
 `var removeFirstEntry  = false` 
