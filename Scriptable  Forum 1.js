@@ -26,16 +26,14 @@
 
  NOTE on first_Entry_starting_At constant.
  
- Skipping the first entry : On the  .json?atest entries.
+ //==
  
- for smallWidgets()
-  var jPosters = jTopics[1] // We would normall use 0 but we want to skip the first entry here for Scriptable latest as it is  the "About the Scriptable category"
-  
-  For otherWdigets   we iterate :   i = 0 normally but we want to hide the first entry which is "About the Scriptable category" so we use 1
+ Skipping the first entry :   We normally include the first entry but we want to hide if it is a sticky post 
+ i.e "About the Scriptable category" 
 
-For the Table :
-we iterate :   i = 0 normally but we want to hide the first entry which is "About the Scriptable category" so we use 1
-
+ var removeFirstEntry  = false/true
+ 
+==//
 
 • ELSE
   // MAKE TABLE FOR SHEET//
@@ -72,8 +70,8 @@ const url = forumURL+"/c/scriptable/13.json"
 
 const widget_forum_heading = "Scriptable"  // Name of Forum
 
-const first_Entry_starting_At = 1  // == We may want to skip the first post as it may be the Topic About Thread. use 1 to skip use 0 to include. This will be use in the  for loop iterations
-
+var removeFirstEntry = true
+ 
 const req = new Request(url)
 const json = await req.loadJSON()
 const  imageSize = 42
@@ -94,7 +92,15 @@ const userNameTextColor = Color.white()
 const jUsers = json.users
 
 //-- latest topic groups
-const  jTopics = json.topic_list.topics
+var  jTopics = json.topic_list.topics
+ 
+ 
+ if (removeFirstEntry){
+  
+  jTopics.shift();
+  
+ }
+
 const tablePostLimit = jTopics.length
 
 var listWidge = new ListWidget()
@@ -121,7 +127,7 @@ if (debugWidget){
          
          listWidge.presentSmall()
         } else if( debugSize == "medium" ){
-             widgetPostLimit = 3
+             widgetPostLimit = 3 
              
              var { listWidge, jPosters, postDetails, pTime, imurl, iurl, imgz,widgetPostLimit } = await otherWidgets()
         
@@ -191,9 +197,8 @@ Script.setWidget(listWidge)
   
     let posts = json.latest_posts
     
-    
-   //==  we iterate :   i = 0 normally but we want to hide the first entry which is "About the Scriptable category" so we use 1
-    for (i = first_Entry_starting_At; i < tablePostLimit; i++) {
+   
+   for (i = 0; i < tablePostLimit; i++) {
         var jPosters =  jTopics[i]
         //-- retrieve last poster details from topic post item
         var postDetails = await parseDetails(jPosters)
@@ -330,7 +335,7 @@ function jPoster(jPosters){
                   var item = jPosters.fancy_title
                 var posterName = jPosters.last_poster_username
                 var itemID = jPosters.id
-                var itemPostCount = jPosters.posts_count
+                var itemPostCount = jPosters.posts_count  
                 
                 var itemTitleUrlSlug =   (forumURL + "/t/" + jPosters.slug + "/" + itemID  + "/" + itemPostCount).toString()
                 var fancyTitle = item.toString()
@@ -398,8 +403,7 @@ async function smallWidgets() {
     listWidge.addSpacer(5)
 
     //-- topic list item
-    var jPosters = jTopics[first_Entry_starting_At] // We would normall use 0 but we want to skip the first entry here for Scriptable latest as it is  the "About the Scriptable category"
-
+    var jPosters = jTopics[0]  
     //-- retrieve last poster details from topic post item
     var postDetails = await parseDetails(jPosters)
 
@@ -512,8 +516,7 @@ async function otherWidgets() {
     forumHeader.setPadding(2, 115, 0, 100)
   //====
     
-    //== i = 0 normally but we want to hide the first entry which is "About the Scriptable category" so we use 1
-    for (i = first_Entry_starting_At; i < widgetPostLimit; i++) {
+   for (i = 0; i < widgetPostLimit; i++) {
        if (i != 0){
         
      //====--- Draw lines between each post // each post only gets a line above, not bottom( will not put line at top or bottom of widget)
