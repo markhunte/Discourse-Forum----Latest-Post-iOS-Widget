@@ -48,7 +48,7 @@ Example 2
 
   
 
-This  widgets  ( **Tumult Forum 2.js**  &  **Scriptable  Forum 1.js** ) where created with [Scriptable](https://scriptable.app ) and are designed to show the latests user posts on the  a Forum Site.
+These  widgets  ( **Tumult Forum 2.js** ,  **Scriptable  Forum 1.js** & **Discourse Forum 2.js** ) where created with [Scriptable](https://scriptable.app ) and are designed to show the latests user posts on the  a Forum Site.
 
 The Forums are powered by <img src="README.assets/Screenshot 2020-11-04.jpg" style="zoom:100%;" /> Which also powers many other forums.
 
