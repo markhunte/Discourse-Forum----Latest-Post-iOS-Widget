@@ -10,7 +10,7 @@ Two examples.
 
 Example 1
 
-**Scriptable  Forum 1.js** file
+**Scriptable  Forum 2.js** file
 
 
 
@@ -43,6 +43,10 @@ Example 2
 | <img src="README.assets/smallW1.png" style="zoom:50%;" /> | <img src="README.assets/medW1.png" style="zoom:50%;" /> | <img src="README.assets/largeW1.png" style="zoom:50%;" /> |
 
 
+
++ Plus  a bonus  **Discourse Forum 2.js** script for the Discourse forums itself.
+
+  
 
 This  widgets  ( **Tumult Forum 2.js**  &  **Scriptable  Forum 1.js** ) where created with [Scriptable](https://scriptable.app ) and are designed to show the latests user posts on the  a Forum Site.
 

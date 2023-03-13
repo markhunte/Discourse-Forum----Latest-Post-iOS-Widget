@@ -22,8 +22,7 @@
           
         ->iurl  .. returns image data
   
-/*
-
+ 
  NOTE on first_Entry_starting_At constant.
  
  //==
@@ -56,10 +55,15 @@
  Users and topic_list
  The users id is in the topic list along with most of the other needed data.
  The user id is then searched for in the users tree to find the users image.
-*///===============================
+  ===============================
 
-///===
-//Debugging within Scriptable
+  === DEBUGGER Preview Widget View  
+	Debugging within Scriptable 
+	if  debugWidget true a widget will pop up when run within the Script Editor
+  Use with console.log() to see result also in the logs/console view
+  
+  debugSize : size of preview widget large/medium/small
+*/
 var debugWidget = false
 var debugSize = "large"
 ///====
@@ -70,10 +74,12 @@ const url = forumURL+"/c/scriptable/13.json"
 
 const widget_forum_heading = "Scriptable"  // Name of Forum
 
-var removeFirstEntry = true
+var removeFirstEntry = true // May be sticky so we dont want it.// need to Check if there is a sticky tag.
  
 const req = new Request(url)
 const json = await req.loadJSON()
+
+
 const  imageSize = 42
 var widgetPostLimit = 6
 const lineColor = Color.white()
@@ -83,10 +89,10 @@ const lineHeight = 0.5
 // Panel colours
 const widgetBG =   new Color("#1C4560")
 const widgetTitleColor = new Color("#CCCCCC", 1)
-
-
 const widgetTextColor  = Color.yellow() 
 const userNameTextColor = Color.white()
+const timesTextColor =   new Color("#AEFFFF", 1)
+
 
 //-- user groups
 const jUsers = json.users
@@ -94,7 +100,7 @@ const jUsers = json.users
 //-- latest topic groups
 var  jTopics = json.topic_list.topics
  
- 
+ const postedAt = "bumped_at"// Key for the time date stamp of the post -- // alternative "last_posted_at";
  if (removeFirstEntry){
   
   jTopics.shift();
@@ -339,7 +345,7 @@ function jPoster(jPosters){
                 
                 var itemTitleUrlSlug =   (forumURL + "/t/" + jPosters.slug + "/" + itemID  + "/" + itemPostCount).toString()
                 var fancyTitle = item.toString()
-                var timePosted = (jPosters.last_posted_at).toString()
+                var timePosted = (jPosters[postedAt]).toString()
                 var latestPosterImageID =  jPoster(jPosters.posters)
  
         //-- May throw an ERROR if a poster has not chosen an avatar image yet., SO we try catch and use a Blog image as substitute.
@@ -456,7 +462,8 @@ async function smallWidgets() {
     var times = timeStack.addText(pTime)
     times.font = Font.semiboldRoundedSystemFont(12)
 
-    times.textColor = new Color("#AEFFFF", 1)
+    times.textColor =  timesTextColor
+
 
 
  
@@ -622,7 +629,7 @@ async function otherWidgets() {
         var times = nameStack.addText(pTime)
         times.font = Font.semiboldRoundedSystemFont(12)
 
-        times.textColor = new Color("#AEFFFF", 1)
+        times.textColor = timesTextColor
         
        
         

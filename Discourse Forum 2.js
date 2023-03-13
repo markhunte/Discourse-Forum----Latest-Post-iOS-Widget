@@ -4,7 +4,7 @@
 
 /*
  
- ==== FUNCTION LOGIC
+//==== FUNCTION LOGIC
  
 •  req.loadJSON() =>  json data
  
@@ -33,7 +33,7 @@
 
  var removeFirstEntry  = false/true
  
-== 
+==//
 
 • ELSE
   // MAKE TABLE FOR SHEET//
@@ -58,7 +58,8 @@
  The user id is then searched for in the users tree to find the users image.
  ===============================
 
- === DEBUGGER Preview Widget View  
+  
+  === DEBUGGER Preview Widget View  
 	Debugging within Scriptable 
 	if  debugWidget true a widget will pop up when run within the Script Editor
   Use with console.log() to see result also in the logs/console view
@@ -70,12 +71,13 @@ var debugSize = "large"
 
 
 
-const forumURL = "https://forums.tumult.com"
-const url = forumURL+"/latest.json"
 
-const widget_forum_heading = "Tumult Forum"
+const forumURL = "https://meta.discourse.org/"
+const url = forumURL+"latest.json"
 
-var removeFirstEntry = false // May be sticky so we dont want it.// need to Check if there is a sticky tag.
+const widget_forum_heading = "Discourse"  // Name of Forum
+
+var removeFirstEntry = true // May be sticky so we dont want it.// need to Check if there is a sticky tag.
  
 const req = new Request(url)
 const json = await req.loadJSON()
@@ -86,29 +88,27 @@ const lineOpacity=  0.2
 const lineHeight = 0.5
 
 // Panel colours
-const widgetBG =   Color.black() 
-const widgetTitleColor = new Color("#CCCCCC", 1)
-const widgetTextColor  = Color.blue()
-const userNameTextColor = Color.white()
-const timesTextColor =   new Color("#AEFFFF", 1)
+const widgetBG =   Color.white()
+const widgetTitleColor = Color.red()
 
+
+const widgetTextColor  = Color.black();
+const userNameTextColor = Color.blue();
+const timesTextColor =   Color.purple();
 //-- user groups
 const jUsers = json.users
-
-
+ //console.log(jUsers)
 const postedAt = "bumped_at"// Key for the time date stamp of the post -- // alternative "last_posted_at"
 
 //-- latest topic groups
-const  jTopics = json.topic_list.topics
-
-
+var  jTopics = json.topic_list.topics
+ 
  
  if (removeFirstEntry){
   
   jTopics.shift();
   
  }
-
 
 const tablePostLimit = jTopics.length
 
@@ -136,7 +136,7 @@ if (debugWidget){
          
          listWidge.presentSmall()
         } else if( debugSize == "medium" ){
-             widgetPostLimit = 3
+             widgetPostLimit = 3 
              
              var { listWidge, jPosters, postDetails, pTime, imurl, iurl, imgz,widgetPostLimit } = await otherWidgets()
         
@@ -206,8 +206,8 @@ Script.setWidget(listWidge)
   
     let posts = json.latest_posts
     
-    
-  for (i = 0; i < tablePostLimit; i++) {
+   
+   for (i = 0; i < tablePostLimit; i++) {
         var jPosters =  jTopics[i]
         //-- retrieve last poster details from topic post item
         var postDetails = await parseDetails(jPosters)
@@ -344,7 +344,7 @@ function jPoster(jPosters){
                   var item = jPosters.fancy_title
                 var posterName = jPosters.last_poster_username
                 var itemID = jPosters.id
-                var itemPostCount = jPosters.posts_count
+                var itemPostCount = jPosters.posts_count  
                 
                 var itemTitleUrlSlug =   (forumURL + "/t/" + jPosters.slug + "/" + itemID  + "/" + itemPostCount).toString()
                 var fancyTitle = item.toString()
@@ -412,7 +412,7 @@ async function smallWidgets() {
     listWidge.addSpacer(5)
 
     //-- topic list item
-    var jPosters = jTopics[0] 
+    var jPosters = jTopics[0]  
     //-- retrieve last poster details from topic post item
     var postDetails = await parseDetails(jPosters)
 
@@ -465,7 +465,7 @@ async function smallWidgets() {
     var times = timeStack.addText(pTime)
     times.font = Font.semiboldRoundedSystemFont(12)
 
-    times.textColor = timesTextColor
+    times.textColor =   timesTextColor 
 
 
  
@@ -525,7 +525,7 @@ async function otherWidgets() {
     forumHeader.setPadding(2, 115, 0, 100)
   //====
     
-    for (i = 0; i < widgetPostLimit; i++) {
+   for (i = 0; i < widgetPostLimit; i++) {
        if (i != 0){
         
      //====--- Draw lines between each post // each post only gets a line above, not bottom( will not put line at top or bottom of widget)
@@ -561,6 +561,7 @@ async function otherWidgets() {
 
         //-- retrieve last post time details from topic post item
         var pTime = timeToString(postDetails.timeOfPost)
+
 
         //--RETRIEVE & BUILD USER/POSTER DETAILS
         var imurl = postDetails["avatarImage"]
@@ -631,6 +632,7 @@ async function otherWidgets() {
         times.font = Font.semiboldRoundedSystemFont(12)
 
         times.textColor = timesTextColor
+       
         
        
         
